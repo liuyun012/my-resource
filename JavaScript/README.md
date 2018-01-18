@@ -13,7 +13,7 @@
   - [device.js]()
 - rem终端适配方案
   - [使用Flexible实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
-  ![](https://github.com/liuyun012/my-resource/tree/master/JavaScript/rem.jepg)
+  ![](https://github.com/liuyun012/my-resource/blob/master/JavaScript/rem.jpeg)
 - 电话号码和邮箱地址识别
   ```html
   <!-- 关闭电话号码识别： -->
