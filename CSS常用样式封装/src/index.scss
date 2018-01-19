@@ -1,11 +1,17 @@
 // @Author: qinzhenxing
 // @Date:   2018-01-19T10:53:04+08:00
 // @Last modified by:   qinzhenxing
-// @Last modified time: 2018-01-19T16:13:33+08:00
+// @Last modified time: 2018-01-19T17:02:26+08:00
 
-// ksdfs 
-div {
-  display: flex;
-  width: 1px;
-  height: 1px;
-}
+// 通用样式文件
+@import "./common/reset.scss";           // 重置浏览器样式
+@import "./common/mixins.scss";          // 常用scss函数封装
+@import "./common/animate.scss";         // animate.css 动画样式
+@import "./common/vue-transition.scss";   // <transition> 组件所用样式
+@import "./common/flex-layout.scss";     // flex自适应布局
+@import "./common/variable.scss";        // 项目变量设置
+@import "./common/common.scss";          // 项目公用样式集合
+
+// 通用单组件样式文件
+
+// 模块页面样式文件

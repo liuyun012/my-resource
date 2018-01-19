@@ -10,7 +10,8 @@ npm install
 gulp
 ```
 
-## 文件目录
+## src文件目录
+- index.scss : css样式汇总输出主文件
 - common(通用的css样式库)
   - reset.scss: 浏览器样式重置
   - animate.scss: css3动画库样式
