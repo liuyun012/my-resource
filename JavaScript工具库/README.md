@@ -1,13 +1,13 @@
 # JavaScript开发工具资源汇总
 
 ## 工具功能对应表
-- fastclick.js : 移动端 click 300ms 延迟响应;
-- rem.js : 移动端适配rem，配合 px2rem 插件使用;
-- formatDate.js : 对时间进行格式化;
-- validator.js : from表单验证工具库(数字，字符，手机，密码等)
-- regExp.js : 常用的正则表达式汇总整理
-- cookie.js : cookie的获取，设置，及删除操作
-- jsBridge.js : h5与移动客户端 WebView 的交互方法
+- [fastclick.js](https://github.com/liuyun012/my-resource/blob/master/JavaScript/utils/fastclick.js) : 移动端 click 300ms 延迟响应;
+- [rem.js](https://github.com/liuyun012/my-resource/blob/master/JavaScript/utils/rem.js) : 移动端适配rem，配合 px2rem 插件使用;
+- [formatDate.js](https://github.com/liuyun012/my-resource/blob/master/JavaScript/utils/formatDate.js) : 对时间进行格式化;
+- [validator.js](https://github.com/liuyun012/my-resource/blob/master/JavaScript/utils/validator.js) : from表单验证工具库(数字，字符，手机，密码等)
+- [regExp.js](https://github.com/liuyun012/my-resource/blob/master/JavaScript/utils/regExp.js) : 常用的正则表达式汇总整理
+- [cookie.js](https://github.com/liuyun012/my-resource/blob/master/JavaScript/utils/cookie.js) : cookie的获取，设置，及删除操作
+- [jsBridge.js](https://github.com/liuyun012/my-resource/blob/master/JavaScript/utils/jsBridge.js) : h5与移动客户端 WebView 的交互方法
 
 ## 前端开发项目效率提升
 - 移动端 click 300ms 延迟响应<br>

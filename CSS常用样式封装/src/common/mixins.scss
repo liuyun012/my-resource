@@ -1,0 +1,148 @@
+// @Author: qinzhenxing
+// @Date:   2017-09-26T11:35:40+08:00
+// @Description: 包括常用的mixin，%及@function
+// @Last modified by:   qinzhenxing
+// @Last modified time: 2018-01-19T14:51:34+08:00
+
+//-----------------------------------------------------
+// mixin，通过@include调用，样式通过拷贝的方式使用，尤其适用于传递参数
+// %，通过@extend调用，样式通过组合申明的方式使用，适用于不传参数的代码片段
+// @function，返回一个值，用于调用
+//-----------------------------------------------------
+
+// 闭合子元素的浮动
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: '.';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+  *height: 1%;
+}
+
+// Text overflow
+// 元素可以设置宽度才可应用省略号, 多行时，传入行数
+@mixin ellipsis($row) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $row {
+    display: -webkit-box;
+    -webkit-line-clamp: $row;
+    -webkit-box-orient: vertical;
+  } @else if {
+    white-space: nowrap;
+  }
+}
+
+// 元素的绝对定位
+@mixin absolute($left, $top, $width, $height) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  width: $width;
+  height: $height;
+}
+
+// 箭头 arrow(direction, size, color);
+@mixin arrow($direction, $size, $color) {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  border-width: $size;
+  cursor: pointer;
+  @if $direction == top {
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent $color transparent;
+    border-top: none;
+  }
+  @else if $direction == bottom {
+    border-style: solid dashed dashed dashed;
+    border-color: $color transparent transparent transparent;
+    border-bottom: none;
+  }
+  @else if $direction == right {
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent $color;
+    border-right: none;
+  }
+  @else if $direction == left {
+    border-style: dashed solid dashed dashed;
+    border-color: transparent $color transparent transparent;
+    border-left: none;
+  }
+  @else if $direction == rightTop {
+    border-style: solid solid dashed dashed;
+    border-color: $color $color transparent transparent;
+  }
+  @else if $direction == leftTop {
+    border-style: solid dashed dashed solid;
+    border-color: $color transparent transparent $color;
+  }
+  @else if $direction == leftBottom {
+    border-style: dashed dashed solid solid;
+    border-color: transparent transparent $color $color;
+  }
+}
+
+// 通过 clip-path 裁剪属性 实现的三角形
+@mixin triangle($direction, $size, $color) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+// 禁用样式，加!important
+@mixin disabled($bgColor:#e6e6e6,$textColor:#ababab){
+  background-color: $bgColor !important;
+  color: $textColor !important;
+  cursor: not-allowed !important;
+}
+%disabled{
+  @include disabled;
+}
+
+// 针对火狐浏览器打bug
+// @include firefox{.test{padding-bottom:3px;}}
+@mixin firefox {
+  @-moz-document url-prefix(){
+    @content;
+  }
+}
+
+//媒体查询函数
+@mixin bp-large {
+  @media only screen and (max-width: 60em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 30em) {
+    @content;
+  }
+}
+/* 横屏 */
+@mixin bp-landscape {
+  @media screen and (orientation:landscape){
+    @content;
+  }
+}
+/* 竖屏 */
+@mixin bp-portrait {
+  @media screen and (orientation:portrait){
+    @content;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "sassToCss",
+  "version": "0.0.1",
+  "description": "将sass文件批量转css并压缩，利于引用",
+  "main": "index.js",
+  "author": "Qzx",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-sass": "^3.1.0"
+  }
+}

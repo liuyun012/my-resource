@@ -1,0 +1,48 @@
+// @Author: qinzhenxing
+// @Date:   2018-01-19T15:12:17+08:00
+// @Description: Vue转场动画 <transition> 组件自定义样式名
+// @Last modified by:   qinzhenxing
+// @Last modified time: 2018-01-19T15:22:38+08:00
+
+/* 淡入淡出的效果 */
+.fade-enter, .fade-leave-to {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+.fade-leave-active {
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
+
+/* 类似 app左右切屏动画 的效果 */
+.slide-left-enter {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.slide-right-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  will-change: transform;
+  transition: all .5s;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.slide-left-leave-active {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
